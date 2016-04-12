@@ -15,7 +15,7 @@
     "authors": [
         {
             "name": "EXATIA",
-            "homepage": "https://github.com/exatia/graphhopper-route-optimization-php-client"
+            "homepage": "https://bitbucket.org/exatia/graphhopper-route-optimization-php-client"
         }
     ],
     "require": {
@@ -31,5 +31,12 @@
     },
     "autoload": {
         "psr-4": { "Exatia\\GraphhopperRouteOptimizationClient\\" : "lib/" }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Exatia\\GraphhopperRouteOptimizationClient\\": "lib/Tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

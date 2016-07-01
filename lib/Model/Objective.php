@@ -1,6 +1,6 @@
 <?php
 /**
- * Stop
+ * Objective
  *
  * PHP version 5
  *
@@ -44,7 +44,7 @@ namespace Exatia\GraphhopperRouteOptimizationClient\Model;
 use \ArrayAccess;
 
 /**
- * Stop Class Doc Comment
+ * Objective Class Doc Comment
  *
  * @category    Class
  * @package     Exatia\GraphhopperRouteOptimizationClient
@@ -52,22 +52,21 @@ use \ArrayAccess;
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Stop implements ArrayAccess
+class Objective implements ArrayAccess
 {
     /**
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Stop';
+    protected static $swaggerModelName = 'Objective';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = array(
-        'address' => '\Exatia\GraphhopperRouteOptimizationClient\Model\Address',
-        'duration' => 'int',
-        'time_windows' => '\Exatia\GraphhopperRouteOptimizationClient\Model\TimeWindow[]'
+        'type' => 'string',
+        'value' => 'string'
     );
 
     public static function swaggerTypes()
@@ -80,9 +79,8 @@ class Stop implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = array(
-        'address' => 'address',
-        'duration' => 'duration',
-        'time_windows' => 'time_windows'
+        'type' => 'type',
+        'value' => 'value'
     );
 
     public static function attributeMap()
@@ -95,9 +93,8 @@ class Stop implements ArrayAccess
      * @var string[]
      */
     protected static $setters = array(
-        'address' => 'setAddress',
-        'duration' => 'setDuration',
-        'time_windows' => 'setTimeWindows'
+        'type' => 'setType',
+        'value' => 'setValue'
     );
 
     public static function setters()
@@ -110,9 +107,8 @@ class Stop implements ArrayAccess
      * @var string[]
      */
     protected static $getters = array(
-        'address' => 'getAddress',
-        'duration' => 'getDuration',
-        'time_windows' => 'getTimeWindows'
+        'type' => 'getType',
+        'value' => 'getValue'
     );
 
     public static function getters()
@@ -120,8 +116,38 @@ class Stop implements ArrayAccess
         return self::$getters;
     }
 
+    const TYPE_MIN = 'min';
+    const TYPE_MIN_MAX = 'min-max';
+    const VALUE_COMPLETION_TIME = 'completion_time';
+    const VALUE_TRANSPORT_TIME = 'transport_time';
+    const VALUE_VEHICLES = 'vehicles';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_MIN,
+            self::TYPE_MIN_MAX,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getValueAllowableValues()
+    {
+        return [
+            self::VALUE_COMPLETION_TIME,
+            self::VALUE_TRANSPORT_TIME,
+            self::VALUE_VEHICLES,
+        ];
+    }
     
 
     /**
@@ -136,9 +162,8 @@ class Stop implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
-        $this->container['time_windows'] = isset($data['time_windows']) ? $data['time_windows'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -149,6 +174,14 @@ class Stop implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = array();
+        $allowed_values = array("min", "min-max");
+        if (!in_array($this->container['type'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'type', must be one of #{allowed_values}.";
+        }
+        $allowed_values = array("completion_time", "transport_time", "vehicles");
+        if (!in_array($this->container['value'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'value', must be one of #{allowed_values}.";
+        }
         return $invalid_properties;
     }
 
@@ -160,69 +193,64 @@ class Stop implements ArrayAccess
      */
     public function valid()
     {
+        $allowed_values = array("min", "min-max");
+        if (!in_array($this->container['type'], $allowed_values)) {
+            return false;
+        }
+        $allowed_values = array("completion_time", "transport_time", "vehicles");
+        if (!in_array($this->container['value'], $allowed_values)) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets address
-     * @return \Exatia\GraphhopperRouteOptimizationClient\Model\Address
+     * Gets type
+     * @return string
      */
-    public function getAddress()
+    public function getType()
     {
-        return $this->container['address'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets address
-     * @param \Exatia\GraphhopperRouteOptimizationClient\Model\Address $address
+     * Sets type
+     * @param string $type type of objective function, i.e. min or min-max
      * @return $this
      */
-    public function setAddress($address)
+    public function setType($type)
     {
-        $this->container['address'] = $address;
+        $allowed_values = array('min', 'min-max');
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'min', 'min-max'");
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets duration
-     * @return int
+     * Gets value
+     * @return string
      */
-    public function getDuration()
+    public function getValue()
     {
-        return $this->container['duration'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets duration
-     * @param int $duration duration of stop, i.e. time in ms the corresponding activity takes
+     * Sets value
+     * @param string $value objective function value
      * @return $this
      */
-    public function setDuration($duration)
+    public function setValue($value)
     {
-        $this->container['duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
-     * Gets time_windows
-     * @return \Exatia\GraphhopperRouteOptimizationClient\Model\TimeWindow[]
-     */
-    public function getTimeWindows()
-    {
-        return $this->container['time_windows'];
-    }
-
-    /**
-     * Sets time_windows
-     * @param \Exatia\GraphhopperRouteOptimizationClient\Model\TimeWindow[] $time_windows array of time windows. currently, only a single time window is allowed
-     * @return $this
-     */
-    public function setTimeWindows($time_windows)
-    {
-        $this->container['time_windows'] = $time_windows;
+        $allowed_values = array('completion_time', 'transport_time', 'vehicles');
+        if (!in_array($value, $allowed_values)) {
+            throw new \InvalidArgumentException("Invalid value for 'value', must be one of 'completion_time', 'transport_time', 'vehicles'");
+        }
+        $this->container['value'] = $value;
 
         return $this;
     }

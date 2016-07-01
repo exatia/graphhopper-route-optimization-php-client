@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **shipments** | [**\Swagger\Client\Model\Shipment[]**](Shipment.md) | An array of shipments | [optional] 
 **relations** | [**\Swagger\Client\Model\Relation[]**](Relation.md) | An array of relations | [optional] 
 **algorithm** | [**\Swagger\Client\Model\Algorithm**](Algorithm.md) |  | [optional] 
+**objectives** | [**\Swagger\Client\Model\Objective[]**](Objective.md) | An array of objectives | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

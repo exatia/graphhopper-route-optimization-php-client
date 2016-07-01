@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Unique identifier of service | [optional] 
 **type** | **string** | type of service | [optional] 
+**priority** | **int** | priority of service, i.e. 1 &#x3D; high, 2 &#x3D; normal, 3 &#x3D; low. default is 2. | [optional] 
 **name** | **string** | name of service | [optional] 
 **address** | [**\Swagger\Client\Model\Address**](Address.md) |  | [optional] 
 **duration** | **int** | duration of service, i.e. time in ms the corresponding activity takes | [optional] 

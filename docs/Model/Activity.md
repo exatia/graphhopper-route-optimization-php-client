@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **location_id** | **string** | id that refers to address | [optional] 
 **arr_time** | **int** | arrival time at this activity in ms | [optional] 
 **end_time** | **int** | end time of and thus departure time at this activity | [optional] 
+**waiting_time** | **int** | waiting time | [optional] 
+**distance** | **int** | distance in meters | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

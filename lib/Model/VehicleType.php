@@ -68,6 +68,7 @@ class VehicleType implements ArrayAccess
         'type_id' => 'string',
         'profile' => 'string',
         'capacity' => 'int[]',
+        'min_activities' => 'int',
         'speed_factor' => 'double',
         'service_time_factor' => 'double'
     );
@@ -85,6 +86,7 @@ class VehicleType implements ArrayAccess
         'type_id' => 'type_id',
         'profile' => 'profile',
         'capacity' => 'capacity',
+        'min_activities' => 'min_activities',
         'speed_factor' => 'speed_factor',
         'service_time_factor' => 'service_time_factor'
     );
@@ -102,6 +104,7 @@ class VehicleType implements ArrayAccess
         'type_id' => 'setTypeId',
         'profile' => 'setProfile',
         'capacity' => 'setCapacity',
+        'min_activities' => 'setMinActivities',
         'speed_factor' => 'setSpeedFactor',
         'service_time_factor' => 'setServiceTimeFactor'
     );
@@ -119,6 +122,7 @@ class VehicleType implements ArrayAccess
         'type_id' => 'getTypeId',
         'profile' => 'getProfile',
         'capacity' => 'getCapacity',
+        'min_activities' => 'getMinActivities',
         'speed_factor' => 'getSpeedFactor',
         'service_time_factor' => 'getServiceTimeFactor'
     );
@@ -175,6 +179,7 @@ class VehicleType implements ArrayAccess
         $this->container['type_id'] = isset($data['type_id']) ? $data['type_id'] : null;
         $this->container['profile'] = isset($data['profile']) ? $data['profile'] : null;
         $this->container['capacity'] = isset($data['capacity']) ? $data['capacity'] : null;
+        $this->container['min_activities'] = isset($data['min_activities']) ? $data['min_activities'] : null;
         $this->container['speed_factor'] = isset($data['speed_factor']) ? $data['speed_factor'] : null;
         $this->container['service_time_factor'] = isset($data['service_time_factor']) ? $data['service_time_factor'] : null;
     }
@@ -273,6 +278,27 @@ class VehicleType implements ArrayAccess
     public function setCapacity($capacity)
     {
         $this->container['capacity'] = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * Gets minimun activities
+     * @return int
+     */
+    public function getMinActivities()
+    {
+        return $this->container['min_activities'];
+    }
+
+    /**
+     * Sets minimun activities
+     * @param int $minActivities minimun activities
+     * @return $this
+     */
+    public function setMinActivities($minActivities)
+    {
+        $this->container['min_activities'] = $minActivities;
 
         return $this;
     }

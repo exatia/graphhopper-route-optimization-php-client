@@ -70,7 +70,12 @@ class VehicleType implements ArrayAccess
         'capacity' => 'int[]',
         'min_activities' => 'int',
         'speed_factor' => 'double',
-        'service_time_factor' => 'double'
+        'service_time_factor' => 'double',
+        'cost_fixed' => 'double',
+        'cost_distance' => 'double',
+        'cost_time' => 'double',
+        'cost_service' => 'double',
+        'cost_wait' => 'double',
     );
 
     public static function swaggerTypes()
@@ -88,7 +93,12 @@ class VehicleType implements ArrayAccess
         'capacity' => 'capacity',
         'min_activities' => 'min_activities',
         'speed_factor' => 'speed_factor',
-        'service_time_factor' => 'service_time_factor'
+        'service_time_factor' => 'service_time_factor',
+        'cost_fixed' => 'cost_fixed',
+        'cost_distance' => 'cost_distance',
+        'cost_time' => 'cost_time',
+        'cost_service' => 'cost_service',
+        'cost_wait' => 'cost_wait',
     );
 
     public static function attributeMap()
@@ -106,7 +116,12 @@ class VehicleType implements ArrayAccess
         'capacity' => 'setCapacity',
         'min_activities' => 'setMinActivities',
         'speed_factor' => 'setSpeedFactor',
-        'service_time_factor' => 'setServiceTimeFactor'
+        'service_time_factor' => 'setServiceTimeFactor',
+        'cost_fixed' => 'setCostFixed',
+        'cost_distance' => 'setCostDistance',
+        'cost_time' => 'setCostTime',
+        'cost_service' => 'setCostService',
+        'cost_wait' => 'setCostWait',
     );
 
     public static function setters()
@@ -124,7 +139,12 @@ class VehicleType implements ArrayAccess
         'capacity' => 'getCapacity',
         'min_activities' => 'getMinActivities',
         'speed_factor' => 'getSpeedFactor',
-        'service_time_factor' => 'getServiceTimeFactor'
+        'service_time_factor' => 'getServiceTimeFactor',
+        'cost_fixed' => 'getCostFixed',
+        'cost_distance' => 'getCostDistance',
+        'cost_time' => 'getCostTime',
+        'cost_service' => 'getCostService',
+        'cost_wait' => 'getCostWait',
     );
 
     public static function getters()
@@ -182,6 +202,11 @@ class VehicleType implements ArrayAccess
         $this->container['min_activities'] = isset($data['min_activities']) ? $data['min_activities'] : null;
         $this->container['speed_factor'] = isset($data['speed_factor']) ? $data['speed_factor'] : null;
         $this->container['service_time_factor'] = isset($data['service_time_factor']) ? $data['service_time_factor'] : null;
+        $this->container['cost_fixed'] = isset($data['cost_fixed']) ? $data['cost_fixed'] : null;
+        $this->container['cost_distance'] = isset($data['cost_distance']) ? $data['cost_distance'] : null;
+        $this->container['cost_time'] = isset($data['cost_time']) ? $data['cost_time'] : null;
+        $this->container['cost_service'] = isset($data['cost_service']) ? $data['cost_service'] : null;
+        $this->container['cost_wait'] = isset($data['cost_wait']) ? $data['cost_wait'] : null;
     }
 
     /**
@@ -344,6 +369,113 @@ class VehicleType implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets cost_fixed
+     * @return double
+     */
+    public function getCostFixed()
+    {
+        return $this->container['cost_fixed'];
+    }
+
+    /**
+     * Sets cost_fixed
+     * @param double $cost_fixed cost fixed of vehicle type
+     * @return $this
+     */
+    public function setCostFixed($cost_fixed)
+    {
+        $this->container['cost_fixed'] = $cost_fixed;
+
+        return $this;
+    }
+
+    /**
+     * Gets cost_distance
+     * @return double
+     */
+    public function getCostDistance()
+    {
+        return $this->container['cost_distance'];
+    }
+
+    /**
+     * Sets cost_distance
+     * @param double $cost_distance cost distance of vehicle type
+     * @return $this
+     */
+    public function setCostDistance($cost_distance)
+    {
+        $this->container['cost_distance'] = $cost_distance;
+
+        return $this;
+    }
+
+    /**
+     * Gets cost_time
+     * @return double
+     */
+    public function getCostTime()
+    {
+        return $this->container['cost_time'];
+    }
+
+    /**
+     * Sets cost_time
+     * @param double $cost_time cost time of vehicle type
+     * @return $this
+     */
+    public function setCostTime($cost_time)
+    {
+        $this->container['cost_time'] = $cost_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets cost_service
+     * @return double
+     */
+    public function getCostService()
+    {
+        return $this->container['cost_service'];
+    }
+
+    /**
+     * Sets cost_service
+     * @param double $cost_service cost service of vehicle type
+     * @return $this
+     */
+    public function setCostService($cost_service)
+    {
+        $this->container['cost_service'] = $cost_service;
+
+        return $this;
+    }
+
+    /**
+     * Gets cost_wait
+     * @return double
+     */
+    public function getCostWait()
+    {
+        return $this->container['cost_wait'];
+    }
+
+    /**
+     * Sets cost_wait
+     * @param double $cost_wait cost wait of vehicle type
+     * @return $this
+     */
+    public function setCostWait($cost_wait)
+    {
+        $this->container['cost_wait'] = $cost_wait;
+
+        return $this;
+    }
+
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

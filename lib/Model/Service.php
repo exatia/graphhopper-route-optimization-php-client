@@ -74,7 +74,8 @@ class Service implements ArrayAccess
         'time_windows' => '\Exatia\GraphhopperRouteOptimizationClient\Model\TimeWindow[]',
         'size' => 'int[]',
         'required_skills' => 'string[]',
-        'allowed_vehicles' => 'string[]'
+        'allowed_vehicles' => 'string[]',
+        'user_data' => 'array',
     );
 
     public static function swaggerTypes()
@@ -96,7 +97,8 @@ class Service implements ArrayAccess
         'time_windows' => 'time_windows',
         'size' => 'size',
         'required_skills' => 'required_skills',
-        'allowed_vehicles' => 'allowed_vehicles'
+        'allowed_vehicles' => 'allowed_vehicles',
+        'user_data' => 'user_data',
     );
 
     public static function attributeMap()
@@ -118,7 +120,8 @@ class Service implements ArrayAccess
         'time_windows' => 'setTimeWindows',
         'size' => 'setSize',
         'required_skills' => 'setRequiredSkills',
-        'allowed_vehicles' => 'setAllowedVehicles'
+        'allowed_vehicles' => 'setAllowedVehicles',
+        'user_data' => 'setUserData',
     );
 
     public static function setters()
@@ -140,7 +143,8 @@ class Service implements ArrayAccess
         'time_windows' => 'getTimeWindows',
         'size' => 'getSize',
         'required_skills' => 'getRequiredSkills',
-        'allowed_vehicles' => 'getAllowedVehicles'
+        'allowed_vehicles' => 'getAllowedVehicles',
+        'user_data' => 'getUserData',
     );
 
     public static function getters()
@@ -190,6 +194,7 @@ class Service implements ArrayAccess
         $this->container['size'] = isset($data['size']) ? $data['size'] : null;
         $this->container['required_skills'] = isset($data['required_skills']) ? $data['required_skills'] : null;
         $this->container['allowed_vehicles'] = isset($data['allowed_vehicles']) ? $data['allowed_vehicles'] : null;
+        $this->container['user_data'] = isset($data['user_data']) ? $data['user_data'] : null;
     }
 
     /**
@@ -433,6 +438,27 @@ class Service implements ArrayAccess
     public function setAllowedVehicles($allowed_vehicles)
     {
         $this->container['allowed_vehicles'] = $allowed_vehicles;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_data
+     * @return array[]
+     */
+    public function getUserData()
+    {
+        return $this->container['user_data'];
+    }
+
+    /**
+     * Sets user_data
+     * @param array[] $user_data array of user data
+     * @return $this
+     */
+    public function setUserData($user_data)
+    {
+        $this->container['user_data'] = $user_data;
 
         return $this;
     }

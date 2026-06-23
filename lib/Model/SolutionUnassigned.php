@@ -130,7 +130,7 @@ class SolutionUnassigned implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['services'] = isset($data['services']) ? $data['services'] : null;
         $this->container['shipments'] = isset($data['shipments']) ? $data['shipments'] : null;

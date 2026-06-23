@@ -158,7 +158,7 @@ class Vehicle implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['vehicle_id'] = isset($data['vehicle_id']) ? $data['vehicle_id'] : null;
         $this->container['type_id'] = isset($data['type_id']) ? $data['type_id'] : null;

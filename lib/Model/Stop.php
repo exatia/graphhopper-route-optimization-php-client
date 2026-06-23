@@ -134,7 +134,7 @@ class Stop implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
         $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;

@@ -134,7 +134,7 @@ class Address implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['location_id'] = isset($data['location_id']) ? $data['location_id'] : null;
         $this->container['lon'] = isset($data['lon']) ? $data['lon'] : null;

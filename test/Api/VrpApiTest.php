@@ -54,13 +54,13 @@ use \Exatia\GraphhopperRouteOptimizationClient\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class VrpApiTest extends \PHPUnit_Framework_TestCase
+class VrpApiTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
      * Setup before running each test case
      */
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
 
     }
@@ -68,7 +68,7 @@ class VrpApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Clean up after running each test case
      */
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
 
     }

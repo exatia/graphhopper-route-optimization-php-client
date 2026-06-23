@@ -158,7 +158,7 @@ class Algorithm implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['problem_type'] = isset($data['problem_type']) ? $data['problem_type'] : null;
         $this->container['objective'] = isset($data['objective']) ? $data['objective'] : null;

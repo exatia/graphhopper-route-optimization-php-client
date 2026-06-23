@@ -150,7 +150,7 @@ class Request implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['vehicles'] = isset($data['vehicles']) ? $data['vehicles'] : null;
         $this->container['vehicle_types'] = isset($data['vehicle_types']) ? $data['vehicle_types'] : null;

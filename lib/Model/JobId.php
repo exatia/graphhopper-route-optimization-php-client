@@ -126,7 +126,7 @@ class JobId implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['job_id'] = isset($data['job_id']) ? $data['job_id'] : null;
     }

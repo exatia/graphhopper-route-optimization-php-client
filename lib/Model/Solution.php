@@ -146,7 +146,7 @@ class Solution implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property value initalizing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['costs'] = isset($data['costs']) ? $data['costs'] : null;
         $this->container['distance'] = isset($data['distance']) ? $data['distance'] : null;

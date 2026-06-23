@@ -69,7 +69,7 @@ class SolutionApi
      *
      * @param \Exatia\GraphhopperRouteOptimizationClient\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Exatia\GraphhopperRouteOptimizationClient\ApiClient $apiClient = null)
+    public function __construct(?\Exatia\GraphhopperRouteOptimizationClient\ApiClient $apiClient = null)
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
